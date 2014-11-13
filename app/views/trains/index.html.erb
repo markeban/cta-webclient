@@ -1,0 +1,16 @@
+<h1>Current Status of CTA Trains</h1>
+<p>(taken from cta-api app)</p>
+
+<table>
+  <th>Train Line</th>
+  <th>Status</th>
+
+  <% @trains.each do |train| %>
+    <tr>
+      <td> <%= link_to train["name"], train_path(train["id"]) %> </td>
+      <td class="<%= train["label"] %>"><%= train["status"] %></td>
+    </tr>
+  <% end %>
+
+
+</table>

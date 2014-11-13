@@ -1,0 +1,12 @@
+<h1>Train Status and what not</h1>
+
+
+
+<p> Train Line: <%= @train["name"] %></p>
+<p> Train Line: <%= @train["status"] %></p>
+<p> Train Line: <%= @train["label"] %></p>
+
+<%= link_to "Edit", edit_train_path(@train["id"]) %>
+<%= link_to "Delete", train_path(@train["id"]), :method => :delete %>
+
+<p><%= link_to "Index Page of Trains", trains_path %></p>

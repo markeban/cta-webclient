@@ -1,0 +1,18 @@
+<h1>Update a Train Line</h1>
+
+<div class="form">
+  <%= form_tag(train_path(@train["id"]), :method => :patch) do %>
+    <fieldset>
+      <span>Train </span><%= label_tag :name %>
+      <%= text_field_tag :name %><br>
+
+      <%= label_tag :status %>
+      <%= text_field_tag :status %><br>
+
+      <%= submit_tag "Update Train" %>
+    </fieldset>
+  <% end %>
+</div>
+
+
+
