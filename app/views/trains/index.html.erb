@@ -2,13 +2,16 @@
 <p>(taken from cta-api app)</p>
 
 <table>
+   <th>ID #</th> 
   <th>Train Line</th>
   <th>Status</th>
 
-  <% @trains.each do |train| %>
+
+  <% @trains.each do |train_data| %>
     <tr>
-      <td> <%= link_to train["name"], train_path(train["id"]) %> </td>
-      <td class="<%= train["label"] %>"><%= train["status"] %></td>
+      <td> <%= train_data.id %> </td>
+      <td> <%= link_to train_data.name, train_path(train_data.id) %> </td>
+      <td class="<%= train_data.id %>"><%= train_data.status %></td>
     </tr>
   <% end %>
 

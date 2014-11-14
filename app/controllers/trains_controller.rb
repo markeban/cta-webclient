@@ -1,14 +1,12 @@
 class TrainsController < ApplicationController
 
   def index
-    @trains = Unirest.get("http://localhost:3000/trains.json").body
+    @trains = Train.all
   end
 
 
   def show
-    @train = Unirest.get("http://localhost:3000/trains/#{params[:id]}.json").body
-    puts "See Hash in Terminal"
-    puts @train
+    @train = Train.find(params[:id])
   end
 
   def create
