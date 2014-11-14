@@ -22,6 +22,9 @@ class Train
     return trains
   end
 
-
+  def destroy
+      Unirest.delete("http://localhost:3000/trains/#{@id}.json",
+      headers:{ "Accept" => "application/json"})
+  end
 
 end

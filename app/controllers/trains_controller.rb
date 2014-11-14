@@ -45,9 +45,8 @@ class TrainsController < ApplicationController
   end
 
   def destroy
-    Unirest.delete("http://localhost:3000/trains/#{params[:id]}.json",
-      headers:{ "Accept" => "application/json"})
-
+    @train = Train.find(params[:id])
+    @train.destroy
     redirect_to trains_path
   end
 
